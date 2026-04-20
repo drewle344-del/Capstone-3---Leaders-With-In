@@ -1,0 +1,24 @@
+.scenario-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  margin: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scenario-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #4caf50;
+  margin-bottom: 16px;
+}
+
+.scenario-text {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.5;
+}
