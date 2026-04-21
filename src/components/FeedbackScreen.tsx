@@ -2,16 +2,46 @@ import React from 'react';
 import './FeedbackScreen.css';
 
 interface FeedbackScreenProps {
-  message: string;
+  selectedOptionText: string;
+  feedbackMessage: string;
+  leadershipTip: string;
+  bestPracticeExplanation: string;
   onNext: () => void;
 }
 
-const FeedbackScreen: React.FC<FeedbackScreenProps> = ({ message, onNext }) => {
+const FeedbackScreen: React.FC<FeedbackScreenProps> = ({
+  selectedOptionText,
+  feedbackMessage,
+  leadershipTip,
+  bestPracticeExplanation,
+  onNext
+}) => {
   return (
     <div className="feedback-screen">
-      <div className="feedback-card">
-        <h2 className="feedback-message">{message}</h2>
-        <button className="next-button" onClick={onNext}>
+      <div className="feedback-container">
+        <h1 className="feedback-header">Response Recorded! 🎯</h1>
+        
+        <div className="feedback-card selected-answer">
+          <h3>Your Choice</h3>
+          <p className="selected-text">{selectedOptionText}</p>
+        </div>
+        
+        <div className="feedback-card feedback-message">
+          <h3>📊 Feedback</h3>
+          <p>{feedbackMessage}</p>
+        </div>
+        
+        <div className="feedback-card leadership-tip">
+          <h3>💡 Leadership Insight</h3>
+          <p>{leadershipTip}</p>
+        </div>
+        
+        <div className="feedback-card best-practice">
+          <h3>🎓 Why This Matters</h3>
+          <p>{bestPracticeExplanation}</p>
+        </div>
+        
+        <button className="continue-button" onClick={onNext}>
           Next Scenario
         </button>
       </div>

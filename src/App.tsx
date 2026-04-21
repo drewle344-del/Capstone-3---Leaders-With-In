@@ -78,10 +78,19 @@ const App: React.FC = () => {
     );
   }
 
-  if (showFeedback) {
+  if (showFeedback && selectedOption !== null) {
+    const feedback = currentScenario.feedback;
+    const selectedOptionText = currentScenario.options[selectedOption];
+    const feedbackMessage = feedback.option_feedback[selectedOption];
+    const leadershipTip = feedback.leadership_tip;
+    const bestPracticeExplanation = feedback.best_practice_explanation;
+
     return (
       <FeedbackScreen
-        message="Response saved!"
+        selectedOptionText={selectedOptionText}
+        feedbackMessage={feedbackMessage}
+        leadershipTip={leadershipTip}
+        bestPracticeExplanation={bestPracticeExplanation}
         onNext={handleNext}
       />
     );
